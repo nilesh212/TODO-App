@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>TODO App</title>
+  </head>
+  <body>
+    <div class="column-60">
+      <h1>TODO App</h1>
+      <form action="" method="post">
+        <table>
+          <tr>
+            <td colspan="2" class="description">
+              <label for="description-input">DESCRIPTION</label>
+              <input
+                type="text"
+                name="description"
+                id="description-input"
+                placeholder="What do you need to do?"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td class="category">
+              <label for="category-select">CATEGORY</label>
+
+              <select name="category" id="category-select">
+                <option value="" class="choose-category">
+                  Choose a Category
+                </option>
+                <option value="work" class="work">Work</option>
+                <option value="personal" class="personal">Personal</option>
+                <option value="school" class="school">School</option>
+                <option value="cleaning" class="cleaning">Cleaning</option>
+                <option value="other" class="other">Other</option>
+              </select>
+            </td>
+            <td class="due-date">
+              <label for="due-date-input">DUE DATE</label>
+              <input type="date" name="due-date" id="due-date-input" />
+            </td>
+          </tr>
+        </table>
+        <button type="submit">Add Task</button>
+        <button type="">Delete Tasks</button>
+      </form>
+    </div>
+    <div class="column-40"></div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
+
+<---------------------------------------------------------------------------->
+<----------------------------------------------------------------------------->
+<----------------------------------------------------------------------------->
+body {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.column-40,
+.column-60 {
+  display: inline-block;
+}
+
+.column-40 {
+  width: 39%;
+  height: 99.5vh;
+  background-color: black;
+}
+
+.column-60 {
+  width: 59%;
+  height: 99.5vh;
+  vertical-align: top;
+}
+
+table {
+  width: 100%;
+}
+td {
+  margin: 0;
+  padding: 0;
+}
+.description {
+  height: 10vh;
+  border: 2px solid black;
+}
+
+.description label {
+  display: block;
+  text-align: left;
+  height: 20%;
+}
+
+.description input {
+  width: 98%;
+  height: 70%;
+  border: none;
+  text-align: start;
+}
+
+#description-input:focus {
+  outline: none;
+}
+
+.category,
+.due-date {
+  height: 10vh;
+  border: 2px solid black;
+  padding-left: 2px;
+}
+
+.category label {
+  display: block;
+  text-align: left;
+  height: 20%;
+}
+
+.due-date label {
+  display: block;
+  text-align: left;
+  height: 20%;
+}
+
+.category select {
+  width: 98%;
+  outline: none;
+  height: 80%;
+  border: none;
+}
+
+option:hover {
+  color: red;
+}
+
+.due-date input {
+  border: none;
+  width: 98%;
+  height: 80%;
+}
+
+.due-date input:focus {
+  outline: none;
+}
+
+
+<---------------------------------------------------------------------------------->
+<% if(tasks.length==0){%>
+        <div class="no-tasks">Hooray! you have no tasks remaining.</div>
+        <%}%>
+<----------------------------------------------------------------------------------->
+
+
+
+<---------------------------------------------------------------------------->
+<-------------------------JAVASCRIPT---------------------------------------------------->
+<----------------------------------------------------------------------------->
+
+// $("#description-input").on("click", function (e) {
+//   $(".description").css({
+//     background: "#EAEDF0",
+//   });
+//   $(this).css({
+//     background: "#EAEDF0",
+//     color: "white",
+//     border: "none",
+//   });
+// });
+const db = require("../../config/mongoose");
+const Tasks = require("../../models/todo_tasks");
+
+// NOTE(ERROR):- Here, when number of data in database is zero
+// then this below code might give error
+var tasks_list = Tasks.find({}, function (err, tasks) {
+  if (err) {
+    console.log("Error while fetching data in assets js");
+    return err;
+  }
+  return tasks;
+});
+var checkbox = $(".task-style input");
+var taskList = $(".task-style");
+
+// console.log(checkbox);
+
+/*----------------------------------------------*/
+/* TO change background color of completed task */
+/*----------------------------------------------*/
+
+for (let i = 0; i < checkbox.length; i++) {
+  $(checkbox[i]).on("click", function () {
+    let complete = taskList.complete;
+    console.log(complete);
+  });
+}
+
+/*
+for (let i = 0; i < checkbox.length; i++) {
+  $(checkbox[i]).on("click", function () {
+    let complete = $(this).data("complete");
+    // console.log(typeof complete);
+    if (complete == false) {
+      $(this).data("complete", true);
+      $(taskList[i]).css({
+        background: "#afeed7",
+        textDecoration: "line-through",
+      });
+    } else {
+      $(this).data("complete", false);
+      if (i % 2 != 0) {
+        $(taskList[i]).css({
+          background: "#e6e2e2",
+          textDecoration: "none",
+        });
+      } else {
+        $(taskList[i]).css({
+          background: "white",
+          textDecoration: "none",
+        });
+      }
+    }
+  });
+}
+*/

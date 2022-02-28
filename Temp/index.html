@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TODO App</title>
+  </head>
+  <body>
+    <div class="col-6">
+      <h1>TODO App</h1>
+      <form action="" method="post">
+        <div class="desc">
+          <label for="desc-input">DESCRIPTION</label>
+          <input
+            type="text"
+            name="description"
+            id="desc-input"
+            placeholder="What do you need to do?"
+          />
+        </div>
+        <div class="container-2">
+          <div class="category">
+            <label for="category-select">CATEGORY</label>
+
+            <select name="category" id="category-select">
+              <option value="">Choose a Category</option>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="school">School</option>
+              <option value="cleaning">Cleaning</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="due-date">
+            <label for="due-date-input">DUE DATE</label>
+            <input type="date" name="due-date" id="date-input" />
+          </div>
+        </div>
+        <div class="btns">
+          <button type="submit" class="add-task">
+            <i class="fas fa-plus"></i><span>&ensp;&ensp;&ensp;ADD TASK</span>
+          </button>
+          <button type="" class="del-tasks">
+            <i class="fas fa-trash-alt"></i
+            ><span>&ensp;&ensp;DELETE TASKS</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-4">
+      <div class="cat-names">
+        <div class="all cat-style"><span>ALL</span></div>
+        <div class="work cat-style work-style"><span>WORK</span></div>
+        <div class="cleaning cat-style cleaning-style">
+          <span>CLEANING</span>
+        </div>
+        <div class="school cat-style school-style"><span>SCHOOL</span></div>
+        <div class="prsonal cat-style personal-style">
+          <span>PERSONAL</span>
+        </div>
+        <div class="other cat-style other-style"><span>OTHER</span></div>
+      </div>
+      <div class="task-list">
+        <div class="task-1 task-style">
+          <input type="checkbox" data-complete="false" />
+          <div class="task-detail">
+            <div class="task-info">I want to do coding.</div>
+            <div class="task-due-date">
+              <i class="fas fa-calendar-alt"></i> MAY,12,2021
+            </div>
+          </div>
+          <div class="task-cat work-style"><span>WORK</span></div>
+        </div>
+        <div class="task-1 task-style">
+          <input type="checkbox" data-complete="false" />
+          <div class="task-detail">
+            <div class="task-info">I want to do coding.</div>
+            <div class="task-due-date">
+              <i class="fas fa-calendar-alt"></i> MAY,12,2021
+            </div>
+          </div>
+          <div class="task-cat school-style"><span>SCHOOL</span></div>
+        </div>
+        <div class="task-1 task-style">
+          <input type="checkbox" data-complete="false" />
+          <div class="task-detail">
+            <div class="task-info">I want to do coding.</div>
+            <div class="task-due-date">
+              <i class="fas fa-calendar-alt"></i> MAY,12,2021
+            </div>
+          </div>
+          <div class="task-cat personal-style"><span>PERSONAL</span></div>
+        </div>
+        <div class="task-1 task-style">
+          <input type="checkbox" data-complete="false" />
+          <div class="task-detail">
+            <div class="task-info">I want to do coding.</div>
+            <div class="task-due-date">
+              <i class="fas fa-calendar-alt"></i> MAY,12,2021
+            </div>
+          </div>
+          <div class="task-cat cleaning-style"><span>CLEANING</span></div>
+        </div>
+        <div class="task-1 task-style">
+          <input type="checkbox" data-complete="false" />
+          <div class="task-detail">
+            <div class="task-info">I want to do coding.</div>
+            <div class="task-due-date">
+              <i class="fas fa-calendar-alt"></i> MAY,12,2021
+            </div>
+          </div>
+          <div class="task-cat other-style"><span>OTHER</span></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

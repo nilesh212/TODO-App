@@ -1,0 +1,384 @@
+body {
+  width: 98vw;
+  height: 99.63vh;
+  margin: auto;
+  /* background-color: midnightblue; */
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
+}
+
+/*---------------------NAVIGATION-------------------------*/
+/* To navigate to different section PRESS CTRL+F 
+    and type below keywords:
+    1. Heading 
+    2. DESCRIPTION FORM 
+    3. CATEGORY FORM 
+    4. DUE_DATE 
+    5. BUTTON DIV
+    6. COL-4 
+    7. CATEGORY SORT DIVS 
+    8. TASK LIST 
+    9. DIFFERENT CATEGORY'S COLORS 
+/*--------------------------------------------------------*/
+
+.col-6 {
+  margin: auto;
+  width: 58%;
+  height: 100%;
+  /* background-color: orchid; */
+  display: inline-block;
+  vertical-align: top;
+}
+
+.col-4 {
+  margin: auto;
+  width: 40%;
+  height: 100%;
+  /* background-color: powderblue; */
+  display: inline-block;
+  margin-left: -5px;
+}
+
+/*----------------------------------------------*/
+/* Heading */
+/*----------------------------------------------*/
+
+h1 {
+  font-size: 8vw;
+}
+
+/*----------------------------------------------*/
+/* DESCRIPTION FORM */
+/*----------------------------------------------*/
+
+.desc {
+  width: 98%;
+  height: 10vh;
+  /* background-color: sandybrown; */
+  text-align: left;
+  font-size: 1vw;
+  margin: 1vw 0;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.desc:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+#desc-input {
+  display: block;
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.1vw;
+  /* color: white; */
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    width: 96vw;
+    height: auto;
+  }
+  .col-6 {
+    width: 100%;
+    height: 100%;
+  }
+  .col-4 {
+    width: 100%;
+    margin-left: 0px;
+  }
+  /* TODO APP HEADING */
+  h1 {
+    font-size: 16vw;
+  }
+
+  /*Desription */
+  .desc {
+    font-size: 2vw;
+  }
+
+  #desc-input {
+    font-size: 2.3vw;
+  }
+}
+
+/*----------------------------------------------*/
+/* CATEGORY FORM */
+/*----------------------------------------------*/
+
+.container-2 {
+  width: 100%;
+  height: 10vh;
+  /* background-color: yellowgreen; */
+  text-align: left;
+  display: flex;
+  font-size: 1vw;
+  margin: 1vw 0;
+}
+
+.category {
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.category:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+#category-select {
+  display: block;
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  height: 70%;
+  font-size: 1.1vw;
+}
+
+@media screen and (max-width: 750px) {
+  .container-2 {
+    font-size: 2vw;
+  }
+  #category-select {
+    font-size: 2.3vw;
+  }
+}
+
+/*----------------------------------------------*/
+/* DUE_DATE */
+/*----------------------------------------------*/
+.due-date {
+  width: 50%;
+  height: 100%;
+  /* background-color: springgreen; */
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.due-date:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+#date-input {
+  display: block;
+  width: 100%;
+  height: 70%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.1vw;
+}
+
+@media screen and (max-width: 750px) {
+  #date-input {
+    font-size: 2.3vw;
+  }
+}
+
+/*----------------------------------------------*/
+/*BUTTON DIV*/
+/*----------------------------------------------*/
+
+.btns {
+  width: 100%;
+  height: 10vh;
+  /* background: brown; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-task,
+.del-tasks {
+  width: 20%;
+  height: 60%;
+  border: none;
+  color: white;
+  margin-left: 5px;
+  font-weight: bolder;
+  font-size: 1.1vw;
+  border-radius: 4px;
+}
+
+.add-task {
+  background-color: grey;
+}
+
+.add-task:hover {
+  box-shadow: 0px 0px 5px 1px rgb(150, 150, 150);
+  cursor: pointer;
+}
+
+.del-tasks {
+  background-color: crimson;
+}
+
+.del-tasks:hover {
+  box-shadow: 0px 0px 5px 1px rgb(207, 40, 74);
+  cursor: pointer;
+}
+
+.fas {
+  text-align: left;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 750px) {
+  .add-task,
+  .del-tasks {
+    font-size: 2.3vw;
+  }
+}
+/*----------------------------------------------*/
+/* COL-4 */
+/*----------------------------------------------*/
+
+/*----------------------------------------------*/
+/* CATEGORY SORT DIVS */
+/*----------------------------------------------*/
+
+.cat-names {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 7%;
+  /* background: crimson; */
+  font-size: 0.8vw;
+  margin-top: 10px;
+}
+
+.cat-style {
+  width: 15%;
+  background-color: darkgray;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 0.7rem; */
+  border-radius: 2px;
+}
+
+.cat-style:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px 1px grey;
+}
+
+@media screen and (max-width: 750px) {
+  .cat-names {
+    height: 8vw;
+    font-size: 1.8vw;
+    margin-top: 7vw;
+  }
+}
+
+/*----------------------------------------------*/
+/* TASK LIST */
+/*----------------------------------------------*/
+
+.task-list {
+  width: 100%;
+  height: 91%;
+  /* background-color: royalblue; */
+  overflow-y: scroll;
+}
+
+.task-style {
+  width: 100%;
+  height: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.1vw;
+}
+
+.task-style:nth-child(even) {
+  background-color: #e6e2e2;
+  border-radius: 2px;
+}
+
+/* NOTE:- If task is complete 
+background-color: #afeed7; */
+
+.task-style input {
+  width: 3%;
+  height: 40%;
+}
+
+.task-detail {
+  width: 70%;
+  text-align: left;
+}
+
+.task-due-date {
+  font-size: 0.7vw;
+  color: grey;
+}
+
+.task-cat {
+  width: 20%;
+  height: 60%;
+  background-color: tomato;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: context-menu;
+  font-size: 0.7vw;
+  border-radius: 2px;
+}
+
+.task-cat:hover {
+  /* box-shadow: 0px 0px 5px 1px grey; */
+}
+
+@media screen and (max-width: 750px) {
+  .task-list {
+    height: auto;
+    overflow-y: auto;
+  }
+  .task-style {
+    font-size: 2.3vw;
+  }
+  .task-due-date {
+    font-size: 1.4vw;
+  }
+  .task-cat {
+    font-size: 1.4vw;
+  }
+}
+
+/*----------------------------------------------*/
+/* DIFFERENT CATEGORY'S COLORS */
+/*----------------------------------------------*/
+
+.work-style {
+  background-color: tomato;
+  color: white;
+}
+
+.school-style {
+  background-color: sandybrown;
+  color: white;
+}
+
+.cleaning-style {
+  background-color: seagreen;
+  color: white;
+}
+
+.other-style {
+  background-color: darkslateblue;
+  color: white;
+}
+
+.personal-style {
+  background-color: royalblue;
+  color: white;
+}
